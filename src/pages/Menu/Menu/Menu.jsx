@@ -3,6 +3,8 @@ import Cover from '../../Shared/Cover/Cover';
 import menuImg from '../../../assets/menu/banner3.jpg';
 import dessertImg from '../../../assets/menu/dessert-bg.jpeg';
 import pizzaImg from '../../../assets/menu/pizza-bg.jpg';
+import saladImg from '../../../assets/menu/salad-bg.jpg';
+import soupImg from '../../../assets/menu/soup-bg.jpg';
 import useMenu from '../../../hooks/useMenu';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import MenuCategory from '../MenuCategory/MenuCategory';
@@ -13,7 +15,7 @@ const Menu = () => {
     const dessert = menu.filter(item => item.category === "dessert");
     const soup = menu.filter(item => item.category === "soup");
     const pizza = menu.filter(item => item.category === "pizza");
-    const salads = menu.filter(item => item.category === "salads");
+    const salad = menu.filter(item => item.category === "salad");
     const offered = menu.filter(item => item.category === "offered");
     return (
         <div>
@@ -27,18 +29,11 @@ const Menu = () => {
                 subHeading='---Dont miss---'
                 heading='TODAYS OFFER'
             ></SectionTitle>
-            {/* dessert menu items */}
-            <MenuCategory 
-            items={offered} 
-            title='DESSERTS'
-            img={dessertImg}
-            ></MenuCategory>
-            {/* pizza menu items */}
-            <MenuCategory 
-            items={pizza} 
-            title='PIZZA'
-            img={pizzaImg}
-            ></MenuCategory>
+            <MenuCategory items={offered}></MenuCategory>
+            <MenuCategory items={dessert} title='dessert'img={dessertImg}></MenuCategory>
+            <MenuCategory items={pizza} title='pizza'img={pizzaImg}></MenuCategory>
+            <MenuCategory items={salad} title='salad'img={saladImg}></MenuCategory>
+            <MenuCategory items={soup} title='soup'img={soupImg}></MenuCategory>
         </div>
     );
 };
