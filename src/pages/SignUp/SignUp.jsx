@@ -22,7 +22,7 @@ const SignUp = () => {
                         console.log('user profile info updated')
                         reset();
                         Swal.fire({
-                            position: 'top-end',
+                            position: 'center',
                             icon: 'success',
                             title: 'User created successfully.',
                             showConfirmButton: false,
@@ -100,91 +100,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-
-
-
-
-
-// import { useForm } from 'react-hook-form';
-// import { Link } from 'react-router-dom';
-
-
-// const SignUp = () => {
-
-//     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
-//     const onSubmit = data => {
-//         console.log(data);
-//         createUser(data.email, data.password)
-//             .then(result => {
-//                 const loggedUser = result.user;
-//                 console.log(loggedUser);
-//                 updateUserProfile(data.name, data.photoURL)
-//                     .then(() => {
-//                         console.log('user profile info updated')
-//                         reset();
-//                         Swal.fire({
-//                             position: 'top-end',
-//                             icon: 'success',
-//                             title: 'User created successfully.',
-//                             showConfirmButton: false,
-//                             timer: 1500
-//                         });
-//                         navigate('/');
-
-//                     })
-//                     .catch(error => console.log(error))
-//             })
-//     };
-//     const handleSignUp = event => {
-//         event.preventDefault();
-//         const form = event.target;
-//         const name = form.name.value;
-//         const email = form.email.value;
-//         const password = form.password.value;
-//         const signUp = {name, email, password};
-//         console.log(signUp)
-//     }
-//     return (
-//         <div className="hero min-h-screen bg-base-200">
-//             <div className="hero-content flex-col lg:flex-row-reverse">
-//                 <div className="text-center md:w-1/2 lg:text-left">
-//                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    
-//                 </div>
-//                 <div className="card  md:w-1/2 max-w-sm shadow-2xl bg-base-100">
-//                     <form onSubmit={handleSubmit(onSubmit)}  className="card-body">
-//                     <h1 className="text-3xl text-center font-bold">Sign Up</h1>
-//                         <div className="form-control">
-//                             <label className="label">
-//                                 <span className="label-text">Name</span>
-//                             </label>
-//                             <input type="text" name="name" placeholder="Your name" className="input input-bordered"/>
-//                         </div>
-//                         <div className="form-control">
-//                             <label className="label">
-//                                 <span className="label-text">Email</span>
-//                             </label>
-//                             <input type="email" name="email" placeholder="email" className="input input-bordered"/>
-//                         </div>
-//                         <div className="form-control">
-//                             <label className="label">
-//                                 <span className="label-text">Password</span>
-//                             </label>
-//                             <input type="password" name="password" placeholder="password" className="input input-bordered"/>
-//                         </div>
-                        
-//                         <div className="form-control mt-6">
-                            
-//                             <input  className="btn btn-primary" type="submit" value="Sign Up" />
-//                         </div>
-//                     </form>
-//                     <p><small>Log In here?<Link to='/login'>Have an account</Link></small></p>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default SignUp;
