@@ -1,9 +1,10 @@
+
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
@@ -40,8 +41,15 @@ const SignUp = () => {
                                     });
                                     navigate('/');
                                 }
+                                
                             })
-
+                            .catch(error => {
+                                console.error(error)
+                                Swal.fire(
+                                    'login failed!',
+                                    'Provide strong password!',
+                                    'question');
+                            })
 
                     })
                     .catch(error => console.log(error))

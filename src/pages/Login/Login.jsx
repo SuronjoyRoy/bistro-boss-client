@@ -43,6 +43,13 @@ const Login = () => {
                 });
                 navigate(from, { replace: true });
             })
+            .catch(error => {
+                console.error(error)
+                Swal.fire(
+                    'login failed!',
+                    'Wrong Information!',
+                    'question');
+            })
     }
 
     const handleCaptcha = () => {
